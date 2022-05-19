@@ -1,0 +1,31 @@
+<button mat-button color="primary" (click)="fazerLogout()">fazer logout</button>
+<table mat-table [dataSource]="listaProdutos" class="mat-elevation-z8">
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Id. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef> Nome </th>
+      <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="acoes">
+      <mat-header-cell *matHeaderCellDef>
+        <button mat-raised-button class="btn-adicionar" (click)="adicionar()" color="primary">Adicionar</button>
+      </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <button mat-icon-button color="primary" (click)="editar(element.id)" aria-label="botao editar">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="remover(element.id)" color="primary" aria-label="botao remover">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
