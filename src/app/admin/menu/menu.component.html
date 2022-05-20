@@ -1,5 +1,6 @@
 <button mat-button color="primary" (click)="fazerLogout()">fazer logout</button>
-<table mat-table [dataSource]="listaProdutos" class="mat-elevation-z8">
+<div *ngIf="listaProdutos | async; else carregarSpinner">
+  <table mat-table [dataSource]="listaProdutos" class="mat-elevation-z8">
     <!-- Position Column -->
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef> Id. </th>
@@ -29,3 +30,9 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+</div>
+<ng-template #carregarSpinner>
+  <div class="posicionamento-spinner">
+    <mat-spinner color="primary"></mat-spinner>
+  </div>
+</ng-template>

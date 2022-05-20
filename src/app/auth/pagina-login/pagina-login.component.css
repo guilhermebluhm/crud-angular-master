@@ -1,0 +1,17 @@
+mat-card{
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    margin: 4% auto auto;
+}
+
+mat-card-title{
+    display: flex;
+    padding: 3%;
+    justify-content: center;
+}
+
+.formulario{
+    padding: 4%;
+    margin-top: 2%;
+}

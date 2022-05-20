@@ -5,3 +5,10 @@ table{
 .btn-adicionar{
     margin-top: 2%;
 }
+
+.posicionamento-spinner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3%
+}
